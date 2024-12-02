@@ -8,8 +8,6 @@ safe_p2 = 0
 for line in file.readlines():
     reports.append(list(map(int,line.split())))
 
-
-
 def is_safe(report):
     for i in range(1, len(report)):
         diff = abs(report[i] - report[i-1])
@@ -36,7 +34,6 @@ for report in reports:
                 safe = True
         if safe:
             safe_p2 = safe_p2 + 1
-
 
 
 print(safe_p1)
