@@ -13,23 +13,23 @@ for line in file.readlines():
 ### part 1 ###
 
 for line in inst:
-    x = re.findall("mul\((\d+,\d+)\)",line)
-    for pair in x:
-        tot_p1 = tot_p1 + math.prod(list(map(int,pair.split(","))))
+    seqs = re.findall("mul\((\d+,\d+)\)",line)
+    for seq in seqs:
+        tot_p1 = tot_p1 + math.prod(list(map(int,seq.split(","))))
 
 
 ### part 2 ###
 
 for line in inst:
-    x = re.findall("mul\((\d+,\d+)\)+|(do\(\))+|(don't\(\))+",line)
-    for pair in x:
-        pair = list(filter(None, pair))[0]
-        if pair == "do()":
+    seqs = re.findall("mul\((\d+,\d+)\)+|(do\(\))+|(don't\(\))+",line)
+    for seq in seqs:
+        seq = list(filter(None, seq))[0]
+        if seq == "do()":
             do = True
-        elif pair == "don't()":
+        elif seq == "don't()":
             do = False
         elif do:
-            tot_p2 = tot_p2 + math.prod(list(map(int,pair.split(","))))
+            tot_p2 = tot_p2 + math.prod(list(map(int,seq.split(","))))
 
 print(tot_p1)
 print(tot_p2)
