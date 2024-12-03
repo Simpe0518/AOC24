@@ -21,7 +21,7 @@ for line in inst:
 ### part 2 ###
 
 for line in inst:
-    seqs = re.findall("mul\((\d+,\d+)\)+|(do\(\))+|(don't\(\))+",line)
+    seqs = re.findall("mul\((\d+,\d+)\)|(do\(\))|(don't\(\))",line)
     for seq in seqs:
         seq = list(filter(None, seq))[0]
         if seq == "do()":
