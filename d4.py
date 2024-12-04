@@ -1,9 +1,10 @@
-
 file = open("d4.txt", "r")
 inst = []
 XMAS = ['X','M','A','S']
 MAS = "MAS"
+MS = "MS"
 tot_p1 = 0
+tot_p2 = 0
 x = []
 
 for line in file.readlines():
@@ -40,36 +41,19 @@ for x in range(MAX):
                 if inst[x-1][y+1] + inst[x-2][y+2] + inst[x-3][y+3] == MAS:
                     tot_p1 = tot_p1 + 1
 
+for x in range(1, MAX-1):
+    for y in range(1, MAX-1):
+        if inst[x][y] == 'A':
+            if inst[x+1][y+1] + inst[x-1][y-1] in "MSM" and inst[x+1][y-1] + inst[x-1][y+1] in "MSM":
+                tot_p2 = tot_p2 + 1
+
+
 print(tot_p1)
+print(tot_p2)
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            #if x > 0 and y > 0 and x < MAX - 1 and y < MAX - 1:
 
 
 
