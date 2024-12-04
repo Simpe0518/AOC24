@@ -17,7 +17,6 @@ for line in inst:
     for seq in seqs:
         tot_p1 = tot_p1 + math.prod(list(map(int,seq.split(","))))
 
-
 ### part 2 ###
 
 for line in inst:
