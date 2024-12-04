@@ -1,15 +1,12 @@
 file = open("d4.txt", "r")
 inst = []
-XMAS = ['X','M','A','S']
 MAS = "MAS"
 MS = "MS"
 tot_p1 = 0
 tot_p2 = 0
-x = []
 
 for line in file.readlines():
     inst.append(list(line.rstrip()))
-
 
 MAX = len(inst) 
 
@@ -47,58 +44,6 @@ for x in range(1, MAX-1):
             if inst[x+1][y+1] + inst[x-1][y-1] in "MSM" and inst[x+1][y-1] + inst[x-1][y+1] in "MSM":
                 tot_p2 = tot_p2 + 1
 
-
 print(tot_p1)
 print(tot_p2)
 
-
-
-            #if x > 0 and y > 0 and x < MAX - 1 and y < MAX - 1:
-
-
-
-
-"""
-def find_xmas(x,y,n=0,tot=0):
-    if x > X_MAX or y > Y_MAX or x < 0 or y < 0:
-        return 0
-
-    if inst[x][y] == XMAS[n]:
-        n = n + 1
-
-        if n == 1:
-            for off_set in octile(1):
-                tot = tot + find_xmas(x+off_set[0], y+off_set[1], n, tot)
-        elif n < 3:
-            tot = tot + find_xmas(x, y, n, tot)
-        else:
-            return tot + 1
-    return tot
-   
-
-def octile(size):
-
-    octiles = []
-
-    for x in range(size*2):
-        octiles.append([x-size+1, size])
-        octiles.append([x-size, -size]) 
-    for y in range(size*2):
-        octiles.append([size, y-size]) 
-        octiles.append([-size, y-size+1])
-
-    return octiles
-
-
-#print(octile(1))
-
-
-
-for x in range(X_MAX):
-    for y in range(Y_MAX):
-             tot_p1 = tot_p1 + find_xmas(x, y)
-             print(tot_p1)
-
-print(tot_p1)
-
-"""
