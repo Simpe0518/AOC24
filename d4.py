@@ -10,6 +10,8 @@ for line in file.readlines():
 
 MAX = len(inst) 
 
+### Part 1 ###
+
 for x in range(MAX):
     for y in range(MAX):
         if inst[x][y] == 'X':
@@ -37,6 +39,8 @@ for x in range(MAX):
             if x >= 3 and y < MAX - 3:
                 if inst[x-1][y+1] + inst[x-2][y+2] + inst[x-3][y+3] == MAS:
                     tot_p1 = tot_p1 + 1
+
+### Part 2 ###
 
 for x in range(1, MAX-1):
     for y in range(1, MAX-1):
