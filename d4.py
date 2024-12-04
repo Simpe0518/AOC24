@@ -1,7 +1,7 @@
 file = open("d4.txt", "r")
 inst = []
 MAS = "MAS"
-MS = "MS"
+MSM = "MSM"
 tot_p1 = 0
 tot_p2 = 0
 
@@ -45,7 +45,7 @@ for x in range(MAX):
 for x in range(1, MAX-1):
     for y in range(1, MAX-1):
         if inst[x][y] == 'A':
-            if inst[x+1][y+1] + inst[x-1][y-1] in "MSM" and inst[x+1][y-1] + inst[x-1][y+1] in "MSM":
+            if inst[x+1][y+1] + inst[x-1][y-1] in MSM and inst[x+1][y-1] + inst[x-1][y+1] in MSM:
                 tot_p2 = tot_p2 + 1
 
 print(tot_p1)
