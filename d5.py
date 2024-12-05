@@ -1,6 +1,5 @@
 file = open("d5.txt", "r")
 rules_dict = {}
-#rules_list = []
 page_nrs = []
 bad_page_nrs = []
 pages = True
@@ -12,7 +11,6 @@ for line in file.readlines():
         pages = False
     elif pages:
         rule = list(map(int, line.rstrip().split('|')))
-        #rules_list.append(rule)
         if rule[0] in rules_dict.keys():
             rules_dict[rule[0]].append(rule[1])
         else:
@@ -41,19 +39,9 @@ for page in page_nrs:
 
 ### part 2 ###
 
-def page_sort(n):
-    return 0
-
-#print(page_nrs[1:2])
-#print(rules_list)
-
-
 for page in bad_page_nrs:
     sorted_list = sorted(page, key=lambda x: len([a for a in page if is_valid([x,a])]), reverse=True)
     tot_p2 = tot_p2 + sorted_list[((len(sorted_list) - 1) // 2)]
-
-    
-
 
 print(tot_p1)
 print(tot_p2)
