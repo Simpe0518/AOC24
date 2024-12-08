@@ -43,7 +43,6 @@ for x in nodes.keys():
     for i in nodes[x]:
         for j in nodes[x]:
             if i != j:
-
                 inst[i[0]][i[1]] = '#'
                 inst[j[0]][j[1]] = '#'
                 pos1 = i[0] + i[0] - j[0]
