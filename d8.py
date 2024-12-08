@@ -34,10 +34,29 @@ for x in nodes.keys():
                 pos2 = i[1] + i[1] - j[1]
                 if in_range(pos1) and in_range(pos2):
                     inst[pos1][pos2] = '#'
+      
+tot_p2 += sum([len([a for a in line if a == '#']) for line in inst])
 
-tot_p1 =+ sum([len([a for a in line if a == '#']) for line in inst])
+### part 2 ###
 
+for x in nodes.keys():
+    for i in nodes[x]:
+        for j in nodes[x]:
+            if i != j:
 
+                inst[i[0]][i[1]] = '#'
+                inst[j[0]][j[1]] = '#'
+                pos1 = i[0] + i[0] - j[0]
+                pos2 = i[1] + i[1] - j[1]
+                while in_range(pos1) and in_range(pos2):
+                    inst[pos1][pos2] = '#'
+                    print(i, j)
+                    pos1 += i[0] - j[0]
+                    pos2 += i[1] - j[1]
+
+tot_p1 += sum([len([a for a in line if a == '#']) for line in inst])
+
+print(tot_p2)
 print(tot_p1)
 
 
