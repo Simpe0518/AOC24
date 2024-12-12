@@ -48,12 +48,6 @@ for y in range(SIZE):
         else:
             plot_area[value_map[y][x]] = 1
 
-print(plot_area)
-print(plot_fence)
-
-for line in value_map:
-    print(line)
-
 for plot in plot_area.keys():
     tot_p1 += plot_area[plot] * plot_fence[plot]
 
