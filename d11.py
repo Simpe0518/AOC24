@@ -6,7 +6,9 @@ tot_p2 = 0
 for line in file.readlines():
     inst = list(map(int, line.rstrip().split()))
 
-for blink in range(25):
+inst = [inst[0]]
+for blink in range(75):
+    print(blink)
     i = 0
     while i < len(inst):
         if inst[i] == 0:
